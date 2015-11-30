@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:pm="http://primefaces.org/mobile">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+    <h:head />
+
+    <h:body>
+        <h:form>
+            <p:remoteCommand  name="login"
+                              process="@this"
+                              async="true"
+                             
+                              />
+        </h:form>
+
+        <pm:page title="Login" >
+            <pm:header title="V&amp;R PAILL Mobile" />
+
+            <pm:content>
+             
+                <h:form id="login_frm">
+                    <p:growl id="messageError" for="msgError" showDetail="true" widgetVar="messageError" showSummary="true" />
+
+                    <p:panel header="Login" >
+                        <pm:field>
+                            <p:outputLabel for="username" value="Usuario:" />
+                            <p:inputText widgetVar="username" id="username"  required="true" styleClass="input"  />
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel for="password" value="Contraseña " styleClass="label"/>  
+                            <p:password id="password" label="Contraseña"  redisplay="true" required="true" styleClass="password"  />
+                        </pm:field>
+                     <!--   <pm:field>
+                            <h:outputLabel for="somBD" value="Empresa: "/>
+                            <p:selectOneMenu id="somBD"  > 
+                                <f:selectItem itemLabel="Seleccione..." itemDisabled="true" itemValue="#{null}" />
+                                <f:selectItems  var="bd"  />  
+                            </p:selectOneMenu>
+                        </pm:field> -->
+
+                     <p:commandButton id="btnLogin" widgetVar="btnLogin" actionListener="#{loginBean.validarUser3}" value="Ingresar" styleClass="button-primary" update="messageError" process="@form" />
+                    </p:panel>
+                </h:form>
+            </pm:content>
+        </pm:page>
+    </h:body>
+</html>

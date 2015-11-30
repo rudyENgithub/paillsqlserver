@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="frmPrincipal">
+
+            <p:dataTable id="tblPrincipal" var="producto"  editable="true" selectionMode="single" rowKey="#{producto.uid}" value="#{mBvProducto.insumos}">
+               
+    <p:column headerText="Id">
+        <h:outputText value="#{producto.nombre}" />
+    </p:column>
+            <p:column headerText="Cod. Bar">
+                <p:cellEditor>
+              
+                    <f:facet name="output"><h:outputText value="#{producto.uid}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{producto.uid}" style="width:100%" label="Co"/></f:facet>
+                </p:cellEditor>
+                
+    </p:column>
+  <p:column headerText="Nombre">
+       <p:cellEditor>
+
+           <f:facet name="output"><h:outputText value="#{producto.nombre}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{producto.nombre}" style="width:100%" label="Na"/></f:facet>
+              
+      </p:cellEditor>
+    </p:column>
+   
+<p:column style="width:32px">
+           <p:rowEditor />
+       </p:column>
+</p:dataTable>
+            
+        </h:form>
+     
+    
+       
+        
+           
+    </h:body>
+</html>
+
