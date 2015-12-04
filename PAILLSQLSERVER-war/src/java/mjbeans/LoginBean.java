@@ -33,7 +33,7 @@ public class LoginBean {
     
     //3.Database credentials
     private static String USERNAME = "sa";//UserName
-    private static String PASSWORD = "Hackfire14$9";//Password
+    private static String PASSWORD = "Hackfire14$";//Password
 
     /**
      * Creates a new instance of LoginBean

@@ -25,11 +25,10 @@ public class UsuariosLN implements UsuariosLNLocal {
 
     @Override
     public List<Usuarios> selectAll() {
-
         return usuariosFacade.findAll();
-        
-    
     }
+    
+    
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
